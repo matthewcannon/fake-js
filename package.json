@@ -1,0 +1,58 @@
+{
+    "name": "fake-js",
+    "version": "1.0.0",
+    "description": "Fakes for testing your javascripts.",
+    "main": "index.js",
+    "author": "mcannon",
+    "license": "ISC",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/matthewcannon/fake-js.git"
+    },
+    "homepage": "https://github.com/matthewcannon/fake-js.git#readme",
+    "dependencies": {
+        "@babel/polyfill": "^7.0.0",
+        "@babel/runtime": "^7.1.5"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.1.2",
+        "@babel/core": "^7.1.6",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+        "@babel/plugin-transform-runtime": "^7.1.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.1.6",
+        "@babel/register": "^7.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-eslint": "10.0.1",
+        "babel-jest": "^23.6.0",
+        "babel-loader": "^8.0.4",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^23.6.0",
+        "jest-environment-enzyme": "^7.0.1",
+        "jest-enzyme": "^7.0.1",
+        "jest-vim-reporter": "0.0.1",
+        "onchange": "^5.1.0",
+        "prettier": "^1.14.3",
+        "react-addons-test-utils": "0.14.7",
+        "react-dom": "0.14.7"
+    },
+    "scripts": {
+        "babel": "babel ./src --out-dir ./lib",
+        "build": "npm run prettier && npm run babel && npm run lint && npm run jest",
+        "clean": "rm -rf ./lib && rm -rf ./coverage && rm -rf .cache",
+        "jest": "jest ./test/*.spec.js",
+        "lint": "eslint --ext .js --ext ./src test",
+        "prettier": "prettier --write {./src/**/*,./test/**/*,*}.{js,json}",
+        "rebuild": "npm run clean && npm run build",
+        "sass": "node-sass ./style/ --output-style compressed --output ./public/style/",
+        "test": "npm run lint && npm run jest",
+        "tdd": "onchange -i './test/*.spec.js' './src/**/*.js' -- npm run build --silent"
+    }
+}

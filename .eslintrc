@@ -1,0 +1,16 @@
+{
+    "extends": ["prettier"],
+    "plugins": ["import", "prettier"],
+    "parser": "babel-eslint",
+    "rules": {
+        "prettier/prettier": ["error", { "trailingComma": "all", "tabWidth": 4, "printWidth": 120 }],
+        "import/prefer-default-export": "off",
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off",
+        "no-undef": "off",
+        "no-shadow": "off"
+    },
+    "env": {
+        "jest": true
+    }
+}

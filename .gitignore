@@ -1,0 +1,6 @@
+public/
+lib/
+node_modules/
+coverage/
+*.swp
+*.*~
