@@ -1,3 +1,3 @@
-# Fake-Js
+# fake-js
 
 Fakes for testing your Javascripts.
